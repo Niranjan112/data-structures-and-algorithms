@@ -9,7 +9,7 @@ public class BFSByLinkedListMain {
         ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
 
         for (int i = 1; i < 11; i++) {
-            nodeList.add(new GraphNode("V" + i, i-1));
+            nodeList.add(new GraphNode("V" + i));
         }
 
         BFSByLinkedList graph = new BFSByLinkedList(nodeList);
