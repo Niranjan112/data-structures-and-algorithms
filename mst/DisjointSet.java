@@ -66,6 +66,10 @@ public class DisjointSet {
     }
   }
 
+  public static DisjointSet getSet(WeightedNodeForDisjointSet node) {
+    return node.getSet();
+  }
+
   public void printAllNodesOfThisSet() {
     System.out.println("Printing all nodes of the set: ");
     for(WeightedNodeForDisjointSet node: nodesOfSet) {
