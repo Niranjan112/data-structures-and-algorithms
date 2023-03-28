@@ -75,9 +75,9 @@ public class SingleLinkedList {
             if(length == 0) {
                 tail = null;
             }
-        } else if(index >= length) { // deleting the last node
+        } else if(index >= length - 1) { // deleting the last node
             Node tempNode = head;
-            for (int i = 0; i < length - 1; i++) {
+            for (int i = 0; i < length - 2; i++) {
                 tempNode = tempNode.next;
             }
             if(tempNode == head) {
