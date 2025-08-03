@@ -1,0 +1,100 @@
+### Key Idea:
+
+We are trying to reverse only the **second half** of the number and compare it with the **first half**. This allows us to check for a palindrome without reversing the entire number, which is more efficient.
+
+Let’s focus on this block of code:
+
+```java
+int reversedHalf = 0;
+while (x > reversedHalf) {
+    reversedHalf = reversedHalf * 10 + x % 10;
+    x /= 10;
+}
+```
+
+### Step-by-Step Breakdown:
+
+1. **Initialization**: We initialize `reversedHalf` to `0`. This variable will hold the reversed digits of the second half of the number.
+
+2. **While Loop**: The `while` loop continues until `x` (the original number) is smaller than or equal to `reversedHalf`. This is the key idea: we stop the loop when we've processed half of the digits of `x`.
+
+   * **Why?**: Once `reversedHalf` contains the reversed digits of the second half of the number, the number `x` will contain the first half (or one less than half, for odd-length numbers).
+
+3. **Reversing Process**:
+
+   * `x % 10` extracts the last digit of `x`. For example, if `x = 123`, `x % 10` gives `3`.
+   * `reversedHalf = reversedHalf * 10 + x % 10` shifts the existing `reversedHalf` by one place (multiplies it by 10) and then adds the last digit of `x` to it. This builds the reversed number one digit at a time. For example:
+
+     * If `reversedHalf = 0` and `x = 123`, after the first iteration, `reversedHalf` will be `3` and `x` will become `12`.
+     * In the next iteration, `reversedHalf` becomes `32`, and `x` becomes `1`, and so on.
+
+4. **Reducing `x`**: `x /= 10` removes the last digit from `x`. After the first iteration, `x` becomes `12` (i.e., the last digit `3` is removed).
+
+5. **Exit Condition**: The loop exits when `x` is smaller than or equal to `reversedHalf`, which means that `reversedHalf` now contains the reversed digits of the second half of the number, and `x` contains the first half (or part of it).
+
+---
+
+### Example Walkthrough:
+
+Let’s take `x = 12321` as an example.
+
+* **First iteration**:
+
+  * `x = 12321`, `reversedHalf = 0`
+  * `reversedHalf = 0 * 10 + 1 = 1`
+  * `x = 1232`
+* **Second iteration**:
+
+  * `x = 1232`, `reversedHalf = 1`
+  * `reversedHalf = 1 * 10 + 2 = 12`
+  * `x = 123`
+* **Third iteration**:
+
+  * `x = 123`, `reversedHalf = 12`
+  * `reversedHalf = 12 * 10 + 3 = 123`
+  * `x = 12`
+
+Now `x = 12` and `reversedHalf = 123`. The loop ends here because `x` (12) is no longer greater than `reversedHalf` (123). We have reversed half of the number.
+
+---
+
+### Final Comparison:
+
+Now that we have reversed half of the digits of the number, we check if the number is a palindrome by comparing the remaining part:
+
+```java
+return x == reversedHalf || x == reversedHalf / 10;
+```
+
+* If the number has an **even length**, `x` should be exactly equal to `reversedHalf` because the two halves are symmetric.
+* If the number has an **odd length**, the middle digit does not matter for the palindrome check, so we divide `reversedHalf` by 10 to remove the middle digit and compare it with `x`.
+
+---
+
+### Example (cont’d):
+
+For `x = 12321`:
+
+* After the loop, `x = 12` and `reversedHalf = 123`.
+* We check:
+
+  * `x == reversedHalf / 10` → `12 == 123 / 10` → `12 == 12`, which is `true`.
+
+Thus, the method returns `true` because `12321` is a palindrome.
+
+For `x = 12345`:
+
+* After the loop, `x = 123` and `reversedHalf = 543`.
+* We check:
+
+  * `x == reversedHalf / 10` → `123 == 543 / 10` → `123 == 54`, which is `false`.
+
+Thus, the method returns `false` because `12345` is not a palindrome.
+
+---
+
+### Summary:
+
+* The code reverses the second half of the number and compares it to the first half.
+* It avoids reversing the entire number, making it more efficient.
+* The comparison accounts for both even- and odd-length numbers.
