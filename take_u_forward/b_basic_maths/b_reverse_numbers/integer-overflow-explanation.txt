@@ -1,0 +1,14 @@
+Explanation:
+This check is split into two parts:
+
+1. reversedNumber > Integer.MAX_VALUE / 10
+  - The idea is that if reversedNumber is already greater than Integer.MAX_VALUE / 10, multiplying it by 10 will definitely cause an overflow because reversedNumber * 10 would exceed the maximum limit of a 32-bit integer.
+  - Example: If reversedNumber is 214748364, multiplying by 10 would give 2147483640, which is fine. But if reversedNumber is 214748365, multiplying by 10 would result in 2147483650, which exceeds the limit.
+
+2. (reversedNumber == Integer.MAX_VALUE / 10 && lastDigit > 7)
+  - This is the case where the reversed number is just one digit away from reaching the maximum value of a 32-bit integer.
+  - If reversedNumber is equal to 214748364, multiplying it by 10 and adding lastDigit would result in a number that's greater than 2147483647.
+  - The last digit of Integer.MAX_VALUE is 7, so if reversedNumber is already 214748364 (just one digit shy of the maximum), and the lastDigit is greater than 7, then adding it would overflow.
+  - Example: If reversedNumber = 214748364 and lastDigit = 9, then the result of 214748364 * 10 + 9 would be 2147483649, which is too large.
+  - Integer.MAX_VALUE / 10 is 214748364, and the last digit must be less than or equal to 7 to avoid overflow.
+  - lastDigit can be any digit from 0 to 9, but if it is greater than 7, it will cause an overflow when added to the reversed number.
