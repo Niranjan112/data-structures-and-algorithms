@@ -25,7 +25,7 @@ public class PrintAllDivisors {
 
   public static List<Integer> optimalApproach(int n) {
     /*
-    *
+    * For explanation, refer to the image in the same package img.png
     * */
 
     int sqrtN = (int) Math.sqrt(n);
