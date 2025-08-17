@@ -18,20 +18,20 @@ public class A_CountRepeatingNumbers {
   }
 
   public static void linearApproach(int[] arr) {
-    boolean[] visited = new boolean[11];
+    boolean[] visited = new boolean[arr.length];
 
     for (int i = 0; i < arr.length; i++) {
 
-      if(visited[arr[i]]) {
+      if(visited[i]) {
         continue; // Skip if already counted
-      } else {
-        visited[arr[i]] = true; // Mark as visited
       }
 
       int count = 0;
       for (int j = 0; j < arr.length; j++) {
 
         if(arr[i] == arr[j]) {
+          // Mark arr index j as visited. So j will be the future index of i if the number is repeated.
+          visited[j] = true;
           count++;
         }
 
