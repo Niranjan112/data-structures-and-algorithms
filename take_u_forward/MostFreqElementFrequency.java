@@ -8,6 +8,7 @@ public class MostFreqElementFrequency {
     /*
     * LeetCode Question: 1838. Frequency of the Most Frequent Element
     * Problem link: https://leetcode.com/problems/frequency-of-the-most-frequent-element/description/
+    * Youtube link: https://www.youtube.com/watch?v=D6pHZWaafUs
     * */
 
     int[] nums = {1,4,8,13};
