@@ -43,8 +43,9 @@ public class E_RemoveDuplicateFromSortedArr {
     int i = 0;
 
     /*
+    * Start i from 0 and j from 1
     * Keep forwarding j until we find a different element than arr[i].
-    * Once we find that different element, we increment i and copy the element at j to i.
+    * Once we find that different element, we increment i by 1 and copy the element at j to i.
     * This way, all unique elements are moved to the front of the array.
     * */
     for (int j = 1; j < arr.length; j++) {

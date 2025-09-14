@@ -6,6 +6,15 @@ public class F_RotateArray {
 
   public static void main(String[] args) {
 
+    /*
+     * LeetCode Problem: 26. Remove Duplicates from Sorted Array
+     * LeetCode Problem Link: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+     * TUF problem link 1: https://takeuforward.org/data-structure/left-rotate-the-array-by-one/
+     * TUF Problem link 2: https://takeuforward.org/data-structure/rotate-array-by-k-elements/
+     *
+     * Explanation link: https://www.youtube.com/watch?v=TYT5TJSfGlo
+     * */
+
     leftRotateByOneBruteForceApproach(new int[]{1, 2, 3, 4, 5, 6, 7}); // O(n) time complexity and O(n) space complexity
     leftRotateByOneOptimalApproach(new int[]{1, 2, 3, 4, 5, 6, 7}); // O(n) time complexity and O(1) space complexity
 
@@ -91,7 +100,7 @@ public class F_RotateArray {
 
     j = 0; // Reset j to 0 to copy right part of original array into left part of temp array
     int rightPartArrayStartIndex = arr.length - k - 1; // Getting start index of right part original array
-    // Start from rightPartArrayStartIndex till array last index and copy values into temp array
+    // Start from rightPartArrayStartIndex till array last index in original array and copy values into temp array
     while(rightPartArrayStartIndex < arr.length) {
       temp[j] = arr[rightPartArrayStartIndex];
 
