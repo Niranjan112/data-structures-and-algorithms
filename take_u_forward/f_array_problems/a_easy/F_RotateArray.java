@@ -9,8 +9,11 @@ public class F_RotateArray {
     leftRotateByOneBruteForceApproach(new int[]{1, 2, 3, 4, 5, 6, 7}); // O(n) time complexity and O(n) space complexity
     leftRotateByOneOptimalApproach(new int[]{1, 2, 3, 4, 5, 6, 7}); // O(n) time complexity and O(1) space complexity
 
-    rotateArrayRightByK(new int[]{1, 2, 3, 4, 5, 6, 7}, 3); // O(n) time complexity and O(1) space complexity
-    rotateArrayLeftByK(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
+    rotateArrayRightByKBruteForce(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
+    rotateArrayLeftByKBruteForce(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
+
+    rotateArrayRightByKOptimal(new int[]{1, 2, 3, 4, 5, 6, 7}, 3); // O(n) time complexity and O(1) space complexity
+    rotateArrayLeftByKOptimal(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
   }
 
   public static void leftRotateByOneBruteForceApproach(int[] arr) {
@@ -43,7 +46,63 @@ public class F_RotateArray {
     System.out.println("Array after left rotation by one: " + Arrays.toString(arr));
   }
 
-  public static void rotateArrayRightByK(int[] arr, int k) {
+  public static void rotateArrayRightByKBruteForce(int[] arr, int k) {
+    int[] temp = new int[arr.length];
+
+    k = k % arr.length;
+
+    int i = 0; // Start index of temp array
+    int j = arr.length - k; // Getting the start index for right part of original array to copy into temp array
+    // Start from j index till last index in arr and copy all values into temp array from 0th index.
+    while(j < arr.length) {
+      temp[i] = arr[j];
+
+      i++;
+      j++;
+    }
+
+    j = 0; // Reset j to 0 to copy left part of array into right part of temp array
+    int leftPartArrayEndIndex = arr.length - k; // Getting end index of left part original array
+    // Start from j index till calculated leftPartArrayEndIndex and copy values into temp array
+    while(j < leftPartArrayEndIndex) {
+      temp[i] = arr[j];
+
+      i++;
+      j++;
+    }
+
+    System.out.println("[BruteForce] Right Rotated array: " + Arrays.toString(temp));
+  }
+
+  public static void rotateArrayLeftByKBruteForce(int[] arr, int k) {
+    int[] temp = new int[arr.length];
+
+    k = k % arr.length;
+
+    int i = 0; // Start index of original array
+    int j = arr.length - k; // Getting the start index for left part of temp array.
+    // Start from ith index till arr.length - k in arr and copy all values into temp array from jth index.
+    while(j < arr.length) {
+      temp[j] = arr[i];
+
+      i++;
+      j++;
+    }
+
+    j = 0; // Reset j to 0 to copy right part of original array into left part of temp array
+    int rightPartArrayStartIndex = arr.length - k - 1; // Getting start index of right part original array
+    // Start from rightPartArrayStartIndex till array last index and copy values into temp array
+    while(rightPartArrayStartIndex < arr.length) {
+      temp[j] = arr[rightPartArrayStartIndex];
+
+      j++;
+      rightPartArrayStartIndex++;
+    }
+
+    System.out.println("[BruteForce] Left Rotated array: " + Arrays.toString(temp));
+  }
+
+  public static void rotateArrayRightByKOptimal(int[] arr, int k) {
     /*
     * Explanation:
     * Example 1:
@@ -83,9 +142,9 @@ public class F_RotateArray {
     System.out.println("Right rotation: " +Arrays.toString(arr));
   }
 
-  public static void rotateArrayLeftByK(int[] arr, int k) {
+  public static void rotateArrayLeftByKOptimal(int[] arr, int k) {
     /*
-    * Check rotateArrayRightByK first.
+    * Check rotateArrayRightByKOptimal first.
     *
     * So when we want to rotate array to right,
     * We will first, rotate the whole array.
