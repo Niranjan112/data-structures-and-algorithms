@@ -11,9 +11,9 @@ public class K_FindMissingNumInArr {
 
     int[] arr = {9,6,4,2,3,5,7,0,1};
 
-    System.out.println("Missing Number: " + bruteForceApproach(arr));
-    System.out.println("Missing Number: " + betterApproach(arr));
-    System.out.println("Missing Number: " + optimalApproach(arr));
+    System.out.println("Missing Number: " + bruteForceApproach(arr)); // O(n2) time complexity and O(1) space complexity
+    System.out.println("Missing Number: " + betterApproach(arr)); // O(n + n) = O(2n) time complexity and O(n) space complexity
+    System.out.println("Missing Number: " + optimalApproach(arr)); // O(n) time complexity and O(1) space complexity
   }
 
   public static int bruteForceApproach(int[] arr) {
