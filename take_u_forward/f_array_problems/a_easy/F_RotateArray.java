@@ -18,8 +18,8 @@ public class F_RotateArray {
     leftRotateByOneBruteForceApproach(new int[]{1, 2, 3, 4, 5, 6, 7}); // O(n) time complexity and O(n) space complexity
     leftRotateByOneOptimalApproach(new int[]{1, 2, 3, 4, 5, 6, 7}); // O(n) time complexity and O(1) space complexity
 
-    rotateArrayRightByKBruteForce(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
-    rotateArrayLeftByKBruteForce(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
+    rotateArrayRightByKBruteForce(new int[]{1, 2, 3, 4, 5, 6, 7}, 3); // O(n) time complexity and O(n) space complexity
+    rotateArrayLeftByKBruteForce(new int[]{1, 2, 3, 4, 5, 6, 7}, 3); // O(n) time complexity and O(n) space complexity
 
     rotateArrayRightByKOptimal(new int[]{1, 2, 3, 4, 5, 6, 7}, 3); // O(n) time complexity and O(1) space complexity
     rotateArrayLeftByKOptimal(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
