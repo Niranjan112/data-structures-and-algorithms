@@ -8,7 +8,7 @@ public class F_RotateArray {
 
     /*
      * LeetCode Problem: 26. Remove Duplicates from Sorted Array
-     * LeetCode Problem Link: https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+     * LeetCode Problem Link: https://leetcode.com/problems/rotate-array/description/
      * TUF problem link 1: https://takeuforward.org/data-structure/left-rotate-the-array-by-one/
      * TUF Problem link 2: https://takeuforward.org/data-structure/rotate-array-by-k-elements/
      *
