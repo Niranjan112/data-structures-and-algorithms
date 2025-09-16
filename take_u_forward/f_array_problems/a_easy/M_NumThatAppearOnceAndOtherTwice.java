@@ -94,6 +94,8 @@ public class M_NumThatAppearOnceAndOtherTwice {
   public static int optimalApproach(int[] arr) {
     int xor = 0;
 
+    // By xoring all numbers in array.
+    // It will cut out number that are occurring twice and only number that appeared once will be there at last.
     for (int num: arr) {
       xor = xor ^ num;
     }
