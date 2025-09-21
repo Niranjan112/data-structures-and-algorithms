@@ -11,8 +11,8 @@ public class D_MaxSubArraySumInArr {
     * */
     int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
 
-    bruteForce(arr);
-    betterApproach(arr);
+    bruteForce(arr); // O(N ^ 2) time complexity and O(1) space complexity.
+    betterApproach(arr); // O(N) time complexity and O(1) space complexity.
   }
 
   public static void bruteForce(int[] arr) {
