@@ -7,6 +7,14 @@ import java.util.Set;
 public class I_LongestConsecutiveSequence {
 
   public static void main(String[] args) {
+    /*
+     *
+     * 128. Longest Consecutive Sequence
+     * Problem Link: https://leetcode.com/problems/longest-consecutive-sequence/description/
+     *
+     * For detailed explanation check TUF
+     * */
+
     int[] arr = {102, 4, 100, 1, 101, 3, 2, 1, 1};
 
     bruteForceApproach(arr); // O(n^2) time complexity and O(1) space complexity.
