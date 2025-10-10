@@ -1,4 +1,4 @@
-package take_u_forward.f_array_problems.b_medium;
+package take_u_forward.f_array_problems.b_medium.c;
 
 import java.util.HashMap;
 import java.util.Map;
