@@ -8,6 +8,14 @@ public class J_SetMatrixZero {
 
   public static void main(String[] args) {
 
+    /*
+     *
+     * 73. Set Matrix Zeroes
+     * Problem Link: https://leetcode.com/problems/set-matrix-zeroes/description/
+     *
+     * For detailed explanation check TUF
+     * */
+
     bruteForceApproach(new int[][] { {1,1,1}, {1,0,1}, {1,1,1} }); // TC: O((N * M) * (N + M)) + O(N * M) & SC: O(1)
     betterApproach(new int[][] { {1,1,1}, {1,0,1}, {1,1,1} }); // TC: O(2 * (N * M)) & SC: O(N + M)
     optimalApproach(new int[][] { {1,1,1}, {1,0,1}, {1,1,1} }); // TC: O(2*(N*M)) & SC: O(1)
