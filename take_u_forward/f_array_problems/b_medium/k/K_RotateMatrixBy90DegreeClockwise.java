@@ -6,6 +6,14 @@ public class K_RotateMatrixBy90DegreeClockwise {
 
   public static void main(String[] args) {
 
+    /*
+     *
+     * 48. Rotate Image
+     * Problem Link: https://leetcode.com/problems/rotate-image/description/
+     *
+     * For detailed explanation check TUF
+     * */
+
     bruteForceApproach(new int[][] { {1,2,3}, {4,5,6}, {7,8,9} });
     optimalApproach(new int[][] { {5,1,9,11}, {2,4,8,10}, {13,3,6,7}, {15,14,12,16} });
   }
