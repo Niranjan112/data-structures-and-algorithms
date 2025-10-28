@@ -6,7 +6,15 @@ import java.util.List;
 public class I_SpiralMatrix {
 
   public static void main(String[] args) {
-    int[][] matrix = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15,16} };
+    /*
+     *
+     * 54. Spiral Matrix
+     * Problem Link: https://leetcode.com/problems/spiral-matrix/description/
+     *
+     * For detailed explanation check TUF
+     * */
+
+    int[][] matrix = { {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15,16} }; // TC: O(m * n) and SC: O(n)
 
     printSpiral(matrix);
   }
