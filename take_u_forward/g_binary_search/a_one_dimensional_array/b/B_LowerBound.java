@@ -39,8 +39,8 @@ public class B_LowerBound {
       int mid = (low + high) / 2;
 
       if(arr[mid] >= x) { // If arr[mid] is greater than or equal to x then move to left part of array to get lowest greater element than x
+        ansIndex = mid; // This index can be an answer so just update ansIndex.
         high = mid - 1;
-        ansIndex = mid;
       }
       // If arr[mid] is less than x then move to right part of array to get lowest greater element than x.
       else { // arr[mid] < x
