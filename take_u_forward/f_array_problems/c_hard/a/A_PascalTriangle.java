@@ -1,4 +1,4 @@
-package take_u_forward.f_array_problems.c_hard;
+package take_u_forward.f_array_problems.c_hard.a;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,14 @@ import take_u_forward.c_basic_recursion.F_Factorial;
 public class A_PascalTriangle {
 
   public static void main(String[] args) {
+    /*
+     *
+     * 118. Pascal's Triangle
+     * Problem Link: https://leetcode.com/problems/pascals-triangle/description/
+     *
+     * For detailed explanation check TUF
+     * */
+
     approach1(5, 3); // TC: O( r * c * (r-c))) and SC: O(1)
     System.out.println("Element: " + approach1Optimized(5, 3)); // TC: O(col) and SC: O(1)
 
