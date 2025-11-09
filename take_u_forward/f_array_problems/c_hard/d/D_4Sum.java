@@ -9,11 +9,18 @@ import java.util.Set;
 public class D_4Sum {
 
   public static void main(String[] args) {
+    /*
+     *
+     * 18. 4Sum
+     * Problem Link: https://leetcode.com/problems/4sum/description/
+     *
+     * For detailed explanation check TUF
+     * */
     int[] arr = {1, 0, -1, 0, -2, 2};
 
-    bruteForceApproach(arr, 0);
-    betterApproach(arr, 0);
-    optimalApproach(arr, 0);
+    bruteForceApproach(arr, 0); // TC: O(n^4) and SC: O(2 * No of quad)
+    betterApproach(arr, 0); // TC: O(n^3 * log(M)) and SC: O(2 * No of quad) + O(n)
+    optimalApproach(arr, 0); // TC: O(n^3) and SC: O(no. of quadruplets)
   }
 
   public static void bruteForceApproach(int[] arr, int target) {
