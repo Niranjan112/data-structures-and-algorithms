@@ -26,6 +26,8 @@ public class K_CountInversion {
   }
 
   public static void optimalApproach(int[] arr) {
+    // Optimal approach is solved using merge sort and minor change is of getting and maintaining the count countOfPairs += (mid - left + 1);
+
     int countOfPairs = mergeSortAlgo(arr, 0, arr.length - 1);
 
     System.out.println("Inversion Pairs count: " + countOfPairs);
