@@ -40,6 +40,14 @@ public class FindSmallestDivisorForGivenThreshold {
   }
 
   public static int optimalApproach(int[] arr, int threshold) {
+    // If arr size is greater than threshold then we will not get the result less than threshold
+    // Because every division will result to at least 1 as we are doing Math.ceil(). For example: division answer 0.1 -> 1 after ceiling.
+    // So for each arr num division result are coming less than 1 then also sum of all result into arr.length at least which will be bigger than threshold.
+    // So return -1 in this case.
+    if(arr.length > threshold) {
+      return -1;
+    }
+
     int low = 1;
     int high = Arrays.stream(arr).max().getAsInt();
 
