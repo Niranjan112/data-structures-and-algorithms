@@ -8,7 +8,7 @@ public class A_RemoveParathesis {
     String inputString = "(()())(())(()(()))";
 
     solution(inputString); // TC: O(n) and SC: O(1)
-    solutionUsingStack(inputString);
+    solutionUsingStack(inputString); // TC: O(n) and SC: O(1)
   }
 
   private static void solution(String inputString) {
