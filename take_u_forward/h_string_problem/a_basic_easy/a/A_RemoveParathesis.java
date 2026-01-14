@@ -1,4 +1,4 @@
-package take_u_forward.h_string_problem.a_basic_easy;
+package take_u_forward.h_string_problem.a_basic_easy.a;
 
 import java.util.Stack;
 
