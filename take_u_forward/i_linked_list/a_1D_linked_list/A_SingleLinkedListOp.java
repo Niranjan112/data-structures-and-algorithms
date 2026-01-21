@@ -12,6 +12,11 @@ public class A_InsertNodeInLinkedList {
     singleLinkedList.headNode = singleLinkedList.insertAtSpecificPos(singleLinkedList.headNode, 2, 50);
 
     singleLinkedList.printLinkedList();
+
+    // This is leet code problem solution.
+    singleLinkedList.deleteCurrentWithoutUsingHeadNode(singleLinkedList.headNode.nextNode.nextNode);
+
+    singleLinkedList.printLinkedList();
   }
 
 }
@@ -77,6 +82,14 @@ class SingleLinkedList {
     return headNode;
   }
 
+  public void deleteCurrentWithoutUsingHeadNode(Node currentNode) {
+    // This is from the Leet code problem 237. Delete Node in a Linked List
+    // Link: https://leetcode.com/problems/delete-node-in-a-linked-list/description/
+
+    currentNode.data = currentNode.nextNode.data;
+    currentNode.nextNode = currentNode.nextNode.nextNode;
+  }
+
   public void printLinkedList() {
 
     Node currentNode = headNode;
@@ -91,6 +104,31 @@ class SingleLinkedList {
       }
     }
     System.out.println(" -> null");
+  }
+
+  public boolean searchNode(Node head, int data) {
+
+    while(head != null) {
+      if(head.data == data) {
+        return true;
+      }
+
+      head = head.nextNode;
+    }
+
+    return false;
+  }
+
+  public int getLength(Node head) {
+
+    int length = 0;
+
+    while(head != null) {
+      head = head.nextNode;
+      length++;
+    }
+
+    return length;
   }
 }
 
