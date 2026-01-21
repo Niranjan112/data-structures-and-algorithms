@@ -1,6 +1,6 @@
 package take_u_forward.i_linked_list.a_1D_linked_list;
 
-public class A_InsertNodeInLinkedList {
+public class A_SingleLinkedListOp {
 
   public static void main(String[] args) {
     SingleLinkedList singleLinkedList = new SingleLinkedList();
